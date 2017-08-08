@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="FileServicesGet" verbose="1" >
+    <test name="TestServer" >
+        <classes>
+            <class name="FileServicesTest" />
+        </classes>
+    </test>
+
+    <test name="ProdServer">
+        <classes>
+            <class name="FileServicesProd"/>
+        </classes>
+    </test>
+</suite>
