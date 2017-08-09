@@ -1,3 +1,4 @@
+
 import org.hamcrest.core.*;
 import org.testng.annotations.Test;
 import static com.jayway.restassured.RestAssured.*;
@@ -19,7 +20,7 @@ public class FileServicesTest {
     public void downloadReportCompetences(){
         given().header("Authorization", adminWs).
                 when().get(host + "/FileService/Report/Competence/").
-                then().statusCode(200).
+                then().statusCode(20).
                 body(new StringContains("xlsx"));
     }
 
