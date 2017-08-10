@@ -31,12 +31,6 @@ public class FileServicesTest {
                 then().statusCode(200);
     }
 
-    @Test
-    public void downloadCertificate(){
-        given().header("Authorization", admin).
-                when().get(host + "/FileService/Certificate/" + certificateId).
-                then().statusCode(200);
-    }
 
     @Test
     public void downloadGroupAdmin(){
@@ -77,6 +71,13 @@ public class FileServicesTest {
     public void downloadTimeTable(){
         given().header("Authorization", admin).
                 when().get(host + "/FileService/Timetable/" + timetableId).
+                then().statusCode(200);
+    }
+
+    @Test
+    public void downloadCertificate(){
+        given().header("Authorization", admin).
+                when().get(host + "/FileService/Certificate/" + certificateId).
                 then().statusCode(200);
     }
 
