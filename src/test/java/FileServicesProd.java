@@ -20,63 +20,76 @@ public class FileServicesProd {
         given().header("Authorization", adminWs).
                 when().get(host + "/FileService/Report/Competence/").
                 then().statusCode(200).
-                body(new StringContains("xlsx"));
+                body(new StringContains("xlsx")).
+                body(new StringContains("Компетенции"));
     }
 
     @Test
     public void downloadGroupArchive(){
         given().header("Authorization", adminWs).
                 when().get(host + "/FileService/Archive/Group/" + archiveGroupId).
-                then().statusCode(200);
+                then().statusCode(200).
+                body(new StringContains("ValueResponseOfstring"));
     }
 
     @Test
     public void downloadCertificate(){
         given().header("Authorization", admin).
                 when().get(host + "/FileService/Certificate/" + certificateId).
-                then().statusCode(200);
+                then().statusCode(200).
+                body(new StringContains("ValueResponseOfstring"));
     }
 
     @Test
     public void downloadGroupAdmin(){
         given().header("Authorization", admin).
                 when().get(host + "/FileService/Report/GroupAdmin/" + groupAdminId).
-                then().statusCode(200);
+                then().statusCode(200).
+                body(new StringContains("ValueResponseOfstring"));
     }
 
     @Test
     public void downloadGroupReport(){
         given().header("Authorization", adminWs).
                 when().get(host + "/FileService/Report/Group/" + groupReportId).
-                then().statusCode(200);
+                then().statusCode(200).
+                body(new StringContains("xlsx")).
+                body(new StringContains("Группа"));
     }
 
     @Test
     public void downloadOrganizationsReport(){
         given().header("Authorization", adminWs).
                 when().get(host + "/FileService/Report/Organization/").
-                then().statusCode(200);
+                then().statusCode(200).
+                body(new StringContains("xlsx")).
+                body(new StringContains("Организации"));
     }
 
     @Test
     public void downloadRegions(){
         given().header("Authorization", adminWs).
                 when().get(host + "/FileService/Report/Region/0").
-                then().statusCode(200);
+                then().statusCode(200).
+                body(new StringContains("xlsx")).
+                body(new StringContains("Регион"));
     }
 
     @Test
     public void downloadRegion(){
         given().header("Authorization", adminWs).
                 when().get(host + "/FileService/Report/Region/" + regionId).
-                then().statusCode(200);
+                then().statusCode(200).
+                body(new StringContains("xlsx")).
+                body(new StringContains("Регион"));
     }
 
     @Test
     public void downloadTimeTable(){
         given().header("Authorization", admin).
                 when().get(host + "/FileService/Timetable/" + timetableId).
-                then().statusCode(200);
+                then().statusCode(200).
+                body(new StringContains("ValueResponseOfstring"));
     }
 
 
