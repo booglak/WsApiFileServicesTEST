@@ -20,7 +20,7 @@ public class FileServicesTest {
     public void downloadReportCompetences(){
         given().header("Authorization", adminWs).
                 when().get(host + "/FileService/Report/Competence/").
-                then().statusCode(20).
+                then().statusCode(200).
                 body(new StringContains("xlsx"));
     }
 
