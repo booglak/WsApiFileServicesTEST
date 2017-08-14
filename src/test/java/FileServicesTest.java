@@ -15,6 +15,8 @@ public class FileServicesTest {
     int groupReportId = 492;
     int regionId = 78819;
     int timetableId = 21;
+    int b = 3;
+
 
     @Test
     public void downloadReportCompetences(){
