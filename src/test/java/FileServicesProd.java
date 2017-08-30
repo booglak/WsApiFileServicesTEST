@@ -6,6 +6,7 @@ public class FileServicesProd {
 
     String admin = "Basic emxhdGFib2dvbWF6QHlhbmRleC5ydTpKeVJ5OW5Q";
     String adminWs = "Basic Ym9vZ2xha0BnbWFpbC5jb206MjIyMjIy";
+    String user = "Basic Z29vZ2xhZXZAZ21haWwuY29tOjIyMjIyMg==";
     String host = "https://worldskillsacademy.ru:8080";
 
     int archiveGroupId = 485;
@@ -33,7 +34,7 @@ public class FileServicesProd {
     }
 
     @Test
-    public void downloadCertificate(){
+    public void downloadCertificateAdmin(){
         given().header("Authorization", admin).
                 when().get(host + "/FileService/Certificate/" + certificateId).
                 then().statusCode(200).
@@ -85,11 +86,40 @@ public class FileServicesProd {
     }
 
     @Test
-    public void downloadTimeTable(){
+    public void downloadTimeTableAdmin(){
         given().header("Authorization", admin).
                 when().get(host + "/FileService/Timetable/" + timetableId).
                 then().statusCode(200).
                 body(new StringContains("ValueResponseOfstring"));
+    }
+
+    @Test
+    public void downloadTimeTableUser(){
+        given().header("Authorization", user).
+                when().get(host + "/FileService/Timetable/111").
+                then().statusCode(200);
+    }
+
+    @Test
+    public void downloadCertificateUser(){
+        given().header("Authorization", user).
+                when().get(host + "/FileService/Certificate/2634").
+                then().statusCode(200).
+                body(new StringContains("ValueResponseOfstring"));
+    }
+
+    @Test
+    public void dowloadTimetableUserByHash(){
+        given().header("Authorization", user).
+                when().get("https://worldskillsacademy.ru:8008/api/Report/4/a60/Z29vZ2xhZXZAZ21haWwuY29tOjIyMjIyMg==").
+                then().statusCode(200);
+    }
+
+    @Test
+    public void dowloadCertificateUserByHash(){
+        given().header("Authorization", user).
+                when().get("https://worldskillsacademy.ru:8008/api/Report/3/mYbq/Z29vZ2xhZXZAZ21haWwuY29tOjIyMjIyMg==").
+                then().statusCode(200);
     }
 
 

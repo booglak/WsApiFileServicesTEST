@@ -5,7 +5,9 @@ import static com.jayway.restassured.RestAssured.*;
 
 public class FileServicesTest {
 
+    //ousynina@gmail.com  222222
     String adminWs = "Basic b3VzeW5pbmFAZ21haWwuY29tOjIyMjIyMg==";
+    //citygametest3@gmail.com  222222
     String admin = "Basic Y2l0eWdhbWV0ZXN0M0BnbWFpbC5jb206MjIyMjIy";
     String host = "http://185.158.153.24:1488";
 
