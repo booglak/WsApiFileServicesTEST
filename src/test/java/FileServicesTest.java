@@ -7,8 +7,8 @@ public class FileServicesTest {
 
     //ousynina@gmail.com  222222
     String adminWs = "Basic b3VzeW5pbmFAZ21haWwuY29tOjIyMjIyMg==";
-    //citygametest3@gmail.com  222222
-    String admin = "Basic Y2l0eWdhbWV0ZXN0M0BnbWFpbC5jb206MjIyMjIy";
+    //rcintech@mail.ru   gZKPvWl
+    String admin = "Basic cmNpbnRlY2hAbWFpbC5ydTpnWktQdlds";
     String host = "http://185.158.153.24:1488";
 
     int archiveGroupId = 485;
@@ -16,8 +16,8 @@ public class FileServicesTest {
     int groupAdminId = 513;
     int groupReportId = 492;
     int regionId = 78819;
-    int timetableId = 21;
-    int b = 3;
+    int timetableId = 165;
+
 
 
     @Test
